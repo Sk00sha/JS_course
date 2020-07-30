@@ -1,0 +1,50 @@
+#myCanvas{
+    margin-left: 200px;
+    margin-right: auto;
+
+}
+.imgfield{
+    height: 100%;
+    width: 100%;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+h2{
+color: white;
+margin-top: 10%;
+font-family: Oswald;
+}
+div{
+    display: inline-block;
+}
+.card {
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-family: arial;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 20%;  
+    border-radius: 10px;
+}
+  #divid{
+      margin-left: 10%;
+      margin-right: 10%;
+  }
+  .genre{
+      position: absolute;
+      border: 2px solid black;
+      background: radial-gradient(#e66465, #9198e5);
+      top: 0;
+      right: 0;
+	height : 60px;
+	width : 60px;
+    border-radius : 50%;
+}
+body{
+    background-color: #032541;
+}
+.p22{
+    text-align: center;
+    margin-top:25%;
+}
