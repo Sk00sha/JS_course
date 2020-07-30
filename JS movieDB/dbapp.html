@@ -21,7 +21,6 @@
     for (let index = 530; index < 539; index++) {
         const response=await fetch(buildurl(index));
         data= await response.json();
-        console.log(data);
         aray.push({source:data.poster_path,nazov:data.original_title,zanre:data.genres});
 }
 let output='';
@@ -41,6 +40,7 @@ document.getElementById("divid").appendChild(createimage(aray[index].source,aray
      innerdiv.setAttribute("class","genre");
     var x = document.createElement("img");
     x.setAttribute("title",name);
+    var button=document.createElement("BUTTON");
     var p=document.createElement("h2");
     var p2=document.createElement("h2");
     p2.setAttribute("class","p22");
@@ -50,6 +50,8 @@ document.getElementById("divid").appendChild(createimage(aray[index].source,aray
    outerdiv.appendChild(x);
    outerdiv.appendChild(innerdiv);
    outerdiv.appendChild(p);
+   outerdiv.appendChild(button);
+   console.log(button);
 x.setAttribute("id", "obrazok");
 x.setAttribute("alt","obrazk");
 x.setAttribute("class","imgfield");
