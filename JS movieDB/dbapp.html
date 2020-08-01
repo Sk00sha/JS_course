@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>DBapp</title>
 </head>
 <body>
-    <script>
+    <div class="obrazok">
+    <img src="jpeg database.jpg" alt="obrazok">
+</div>
+         <form class="example" action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      <div class="bigsitetext "><h1>Random movies for you</h1></div>
+           <script>
  const url='https://api.themoviedb.org/3/movie/530?api_key=5144e83411256d388c3e668c8aa3cc83';
  //const url_druha="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc?api_key=5144e83411256d388c3e668c8aa3cc83";
  function buildurl(int){
@@ -21,7 +30,7 @@
     for (let index = 530; index < 539; index++) {
         const response=await fetch(buildurl(index));
         data= await response.json();
-        aray.push({source:data.poster_path,nazov:data.original_title,zanre:data.genres});
+        aray.push({source:data.poster_path,nazov:data.original_title,zanre:data.genres,homepage:data.homepage});
 }
 let output='';
 var div =document.createElement("div");
@@ -29,11 +38,12 @@ div.setAttribute("id","divid");
 document.body.appendChild(div);
 for (let index = 0; index < 8; index++) {
    output+= `<li>${aray[index].nazov}<li/>`;
-document.getElementById("divid").appendChild(createimage(aray[index].source,aray[index].nazov));
+document.getElementById("divid").appendChild(createimage(aray[index].source,aray[index].nazov,aray[index].homepage));
+
 }
  }
  get_Movie();
- function createimage(path,name){
+ function createimage(path,name,homepage){
      var outerdiv=document.createElement("div");
      outerdiv.setAttribute("class","card");
      var innerdiv=document.createElement("div");
@@ -41,6 +51,9 @@ document.getElementById("divid").appendChild(createimage(aray[index].source,aray
     var x = document.createElement("img");
     x.setAttribute("title",name);
     var button=document.createElement("BUTTON");
+    button.setAttribute("class","myButton");
+    button.innerHTML="Visit page";
+    button.title=homepage;
     var p=document.createElement("h2");
     var p2=document.createElement("h2");
     p2.setAttribute("class","p22");
@@ -51,14 +64,16 @@ document.getElementById("divid").appendChild(createimage(aray[index].source,aray
    outerdiv.appendChild(innerdiv);
    outerdiv.appendChild(p);
    outerdiv.appendChild(button);
-   console.log(button);
+   //console.log(button);
 x.setAttribute("id", "obrazok");
 x.setAttribute("alt","obrazk");
 x.setAttribute("class","imgfield");
 x.setAttribute("src","http://image.tmdb.org/t/p/w500/"+path);
 return outerdiv;
  }
-
+function replacesite(webpage){
+    window.location.replace(webpage);
+}
     </script>
 </body>
 </html>
