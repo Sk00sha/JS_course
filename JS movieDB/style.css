@@ -54,10 +54,9 @@ body{
 }
 .myButton {
 	box-shadow:inset 0px 0px 0px 0px #bee2f9;
-	background:linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
-	background-color:#63b8ee;
+	background-color:#01b4e4;
 	border-radius:6px;
-	border:1px solid #3866a3;
+	border:1px solid #01b4e4;
 	display:inline-block;
 	cursor:pointer;
 	color:#14396a;
@@ -70,8 +69,9 @@ body{
     margin-left: 28%;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
-	background-color:#468ccf;
+    background-color:#90cea1;
+    border-color: #90cea1;
+    transition-delay: 0.5s;
 }
 .myButton:active {
 	position:relative;

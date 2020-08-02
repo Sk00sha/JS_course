@@ -1,13 +1,25 @@
 
-const url='https://api.themoviedb.org/3/movie/530?api_key=5144e83411256d388c3e668c8aa3cc83';
-//const url_druha="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc?api_key=5144e83411256d388c3e668c8aa3cc83";
+//const url='https://api.themoviedb.org/3/movie/530?api_key=5144e83411256d388c3e668c8aa3cc83';
+const url2="https://api.themoviedb.org/3/genre/movie/list?api_key=5144e83411256d388c3e668c8aa3cc83&language=en-US";
 function buildurl(int){
    const url='https://api.themoviedb.org/3/movie/'+int+'?api_key=5144e83411256d388c3e668c8aa3cc83';
    return url;
 }
+function createlist(array){
+    let list=document.getElementById("list");
+}
 var image="http://image.tmdb.org/t/p";
 async function get_Movie(){
     let aray=[];
+    let array_genres=[];
+        const response=await fetch(url2);
+        data1= await response.json();
+        Object.keys(data1).forEach(function (key){
+            array_genres.push(data1[key]);
+        });
+        console.log(array_genres[0].length);
+        //array_genres.push({id:data1.id,nazov:data1[0].name});
+        
    for (let index = 530; index < 539; index++) {
        const response=await fetch(buildurl(index));
        data= await response.json();
