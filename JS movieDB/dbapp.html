@@ -54,6 +54,9 @@ document.getElementById("divid").appendChild(createimage(aray[index].source,aray
     button.setAttribute("class","myButton");
     button.innerHTML="Visit page";
     button.title=homepage;
+    button.addEventListener('click',function(){
+        console.log(window.location.replace(this.title));
+    })
     var p=document.createElement("h2");
     var p2=document.createElement("h2");
     p2.setAttribute("class","p22");
