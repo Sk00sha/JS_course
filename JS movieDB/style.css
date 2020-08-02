@@ -13,6 +13,7 @@ h2{
 color: white;
 font-family: Oswald;
 text-align: center;
+font-size: 1.5vw;
 }
 div{
     display: inline-block;
@@ -61,7 +62,7 @@ body{
 	cursor:pointer;
 	color:#14396a;
 	font-family:Arial;
-	font-size:19px;
+	font-size:1.5vw;
 	font-weight:bold;
 	padding:8px 8px;
 	text-decoration:none;
