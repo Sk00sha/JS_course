@@ -48,6 +48,14 @@ body{
     margin: 0;
     padding: 0;
 }
+#list{
+    width: 10%;
+    height: 3.05vw;
+    background-color:  #2196F3;
+    border:none;
+    font-size: 1.5vw;
+    font: Oswald;
+}
 .p22{
     text-align: center;
     margin-top:20%;
@@ -56,7 +64,7 @@ body{
 	box-shadow:inset 0px 0px 0px 0px #bee2f9;
 	background-color:#01b4e4;
 	border-radius:6px;
-	border:1px solid #01b4e4;
+	border:none;
 	display:inline-block;
 	cursor:pointer;
 	color:#14396a;
@@ -80,21 +88,23 @@ body{
   form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 1px solid grey;
+    border: none;
     float: left;
     width: 50%;
     background: #f1f1f1;
+    height: 1.6vw;
   }
   
   form.example button {
       position: relative;
     float: left;
     width: 20%;
+    height: 3.05vw;
     padding: 10px;
     background: #2196F3;
     color: white;
     font-size: 17px;
-    border: 1px solid grey;
+    border: none;
     border-left: none;
     cursor: pointer;
   }
