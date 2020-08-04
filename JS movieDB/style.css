@@ -49,12 +49,16 @@ body{
     padding: 0;
 }
 #list{
-    width: 10%;
-    height: 3.05vw;
-    background-color:  #2196F3;
-    border:none;
-    font-size: 1.5vw;
-    font: Oswald;
+    position: relative;
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 101%;
+    border: none;
+    border-left: none;
+    cursor: pointer;
 }
 .p22{
     text-align: center;
@@ -91,15 +95,12 @@ body{
     border: none;
     float: left;
     width: 50%;
-    background: #f1f1f1;
-    height: 1.6vw;
   }
   
   form.example button {
       position: relative;
     float: left;
     width: 20%;
-    height: 3.05vw;
     padding: 10px;
     background: #2196F3;
     color: white;
