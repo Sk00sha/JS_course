@@ -7,6 +7,12 @@ function buildurl(int){
 }
 function createlist(array){
     let list=document.getElementById("list");
+    array.forEach(element => {
+        var option = document.createElement("option");
+        option.text = element.name;
+        option.value = element.id;
+        list.add(option);
+    });
 }
 var image="http://image.tmdb.org/t/p";
 async function get_Movie(){
@@ -14,11 +20,11 @@ async function get_Movie(){
     let array_genres=[];
         const response=await fetch(url2);
         data1= await response.json();
+        // objekt na push do arrayu->vsetky kluce do [0] listu
         Object.keys(data1).forEach(function (key){
             array_genres.push(data1[key]);
         });
-        console.log(array_genres[0].length);
-        //array_genres.push({id:data1.id,nazov:data1[0].name});
+        createlist(array_genres[0]);
         
    for (let index = 530; index < 539; index++) {
        const response=await fetch(buildurl(index));
