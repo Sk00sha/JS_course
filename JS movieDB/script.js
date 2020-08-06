@@ -1,5 +1,4 @@
 
-//const url='https://api.themoviedb.org/3/movie/530?api_key=5144e83411256d388c3e668c8aa3cc83';
 const url2="https://api.themoviedb.org/3/genre/movie/list?api_key=5144e83411256d388c3e668c8aa3cc83&language=en-US";
 function buildurl(int){
    const url='https://api.themoviedb.org/3/movie/'+int+'?api_key=5144e83411256d388c3e668c8aa3cc83';
@@ -14,6 +13,14 @@ function createlist(array){
         list.add(option);
     });
 }
+//funkcia si porovna data a ak existuje v arrayi id ziadaneho zanru tak vrati true
+function analyzegenres(array,genre){ 
+    array.forEach(element => {
+        if(element.id==genre){
+            return true;
+        }else return false;
+    });
+}
 var image="http://image.tmdb.org/t/p";
 async function get_Movie(){
     let aray=[];
@@ -25,11 +32,13 @@ async function get_Movie(){
             array_genres.push(data1[key]);
         });
         createlist(array_genres[0]);
-        
-   for (let index = 530; index < 539; index++) {
-       const response=await fetch(buildurl(index));
-       data= await response.json();
-       aray.push({source:data.poster_path,nazov:data.original_title,zanre:data.genres,homepage:data.homepage});
+        var buffer=539;
+ for (let index = 530; index < buffer; index++) {
+    const response=await fetch(buildurl(index));
+    data= await response.json();
+    //hadze errorik tomorrow i fix :D 
+    if(analyzegenres(data.genres,28)) {console.log("chuj");}
+    aray.push({source:data.poster_path,nazov:data.original_title,zanre:data.genres,homepage:data.homepage});
 }
 let output='';
 var div =document.createElement("div");
@@ -66,13 +75,9 @@ function createimage(path,name,homepage){
   outerdiv.appendChild(innerdiv);
   outerdiv.appendChild(p);
   outerdiv.appendChild(button);
-  //console.log(button);
 x.setAttribute("id", "obrazok");
 x.setAttribute("alt","obrazk");
 x.setAttribute("class","imgfield");
 x.setAttribute("src","http://image.tmdb.org/t/p/w500/"+path);
 return outerdiv;
-}
-function replacesite(webpage){
-   window.location.replace(webpage);
 }
