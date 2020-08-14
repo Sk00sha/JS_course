@@ -37,6 +37,11 @@ textarea.addEventListener('input', function( event ) {
 		progress.classList.toggle('danger', len >= dangerZone);
 		progress.classList.toggle('tragedy', len == tweetLength);
 	}
+	if(len>tweetLength){
+		textarea.style.color='red';
+		console.log(textarea.value.length);
+	}
+	else textarea.style.color='black';
 
 	// handle counter
 	counter.textContent = tweetLength - len;
