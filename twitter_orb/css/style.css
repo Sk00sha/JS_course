@@ -41,7 +41,25 @@ textarea {
   position: absolute;
   bottom: 0.625em;
   right: 0.80em; }
+  .spanwrapper{
+    position: absolute;
+    top: 0.625em;
+    left: 0.80em;
+  }
+  span{
+    word-break: break-all;
 
+  }
+  .spangood{
+    padding: 0;
+    margin: 0;
+  }
+  .spanbad{
+    display: none;
+    color: red;
+    padding: 0;
+    margin: 0;
+  }
 svg {
   transform: rotate(-90deg); }
   svg circle {

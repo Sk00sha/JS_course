@@ -3,7 +3,9 @@
  */
 var progress = document.querySelector('.progress'),
 	textarea = document.querySelector('textarea'),
-	counter  = document.querySelector('.counter');
+	counter  = document.querySelector('.counter'),
+	spangood=document.querySelector('.spangood'),
+	spanbad=document.querySelector('.spanbad');
 
 var	tweetLength = 40,
 	warningZone = Math.floor( tweetLength * (1/2) ),
@@ -26,6 +28,7 @@ textarea.addEventListener('input', function( event ) {
 
 	var len = textarea.value.length,
 		per = textarea.value.length / tweetLength;
+		textarea.style.color='white';
 
 	// handle progress
 	if ( len <= tweetLength ) {
@@ -34,14 +37,18 @@ textarea.addEventListener('input', function( event ) {
 
 		// handle colors
 		progress.classList.toggle('warn', len > warningZone && len < dangerZone);
-		progress.classList.toggle('danger', len >= dangerZone);
+		progress.classList.toggle('danger', len > dangerZone);
 		progress.classList.toggle('tragedy', len == tweetLength);
+		
 	}
 	if(len>tweetLength){
-		textarea.style.color='red';
-		console.log(textarea.value.length);
+		spanbad.style.display='inline';
+		spanbad.innerHTML=textarea.value.slice(tweetLength);
 	}
-	else textarea.style.color='black';
+	else{
+	spanbad.style.display='none'; 	
+	spangood.innerHTML=textarea.value;
+		}
 
 	// handle counter
 	counter.textContent = tweetLength - len;
