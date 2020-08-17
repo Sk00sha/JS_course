@@ -1,0 +1,17 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_3" d="m417.5,183.05" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <path stroke="#000" style="vector-effect: non-scaling-stroke;" id="svg_4" d="m424.5,316.05" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" fill="#fff"/>
+  <path id="svg_5" d="m247.76439,133.1763" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <text font-weight="bold" transform="rotate(-0.3093600571155548 411.1566467285229,208.52536010743034) " xml:space="preserve" text-anchor="start" font-family="Oswald, sans-serif" font-size="50" id="svg_7" y="225.89243" x="261.48594" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">Filip Wagner</text>
+ </g>
+</svg>
