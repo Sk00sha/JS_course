@@ -8,11 +8,14 @@ function getTax() {
 
 class Helloworld{
 	static pozdrav(...daco){
-		let ahoj=daco.sort((a,b) => a-b);
-		return ahoj;
+		let ahoj=(a,b) => b-a;
+		console.log(ahoj(daco[2],daco[3]));
 	}
 }
-console.log(Helloworld.pozdrav(1,3,2,4));
+Helloworld.pozdrav(1,4,3,5);
+
+//let ahoj22=(a,b)=>a+b;
+//console.log(ahoj22(2,3));
 /**
  * @class SexyNumbers
  */
