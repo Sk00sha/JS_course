@@ -32,28 +32,37 @@ async function get_Movie(){
             array_genres.push(data1[key]);
         });
         createlist(array_genres[0]);
-        var buffer=539;
+        var buffer=600;
  for (let index = 530; index < buffer; index++) {
     const response=await fetch(buildurl(index));
     data= await response.json();
-    //hadze errorik tomorrow i fix :D 
-    if(analyzegenres(data.genres,28)) {console.log("chuj");}
-    aray.push({source:data.poster_path,nazov:data.original_title,zanre:data.genres,homepage:data.homepage});
+    if(data.poster_path==null){
+        buffer++;
+    }else{
+    console.log(data);
+    aray.push({source:data.poster_path,nazov:data.original_title,zanre:data.genres,homepage:data.homepage,hodnotenie:data.vote_average,popis:data.overview});
+    }
 }
 let output='';
 var div =document.createElement("div");
 div.setAttribute("id","divid");
 document.body.appendChild(div);
-for (let index = 0; index < 8; index++) {
+for (let index = 0; index < aray.length; index++) {
   output+= `<li>${aray[index].nazov}<li/>`;
-document.getElementById("divid").appendChild(createimage(aray[index].source,aray[index].nazov,aray[index].homepage));
+document.getElementById("divid").appendChild(createimage(aray[index].source,aray[index].nazov,aray[index].homepage,aray[index].hodnotenie,aray[index].popis));
 
 }
 }
 get_Movie();
-function createimage(path,name,homepage){
+function createimage(path,name,homepage,hodnotenie,popisfilmu){
     var outerdiv=document.createElement("div");
     outerdiv.setAttribute("class","card");
+    outerdiv.addEventListener('mouseenter',function() {
+    info.style.display="block";
+    });
+    outerdiv.addEventListener('mouseleave',function() {
+        info.style.display="none";
+        });
     var innerdiv=document.createElement("div");
     innerdiv.setAttribute("class","genre");
    var x = document.createElement("img");
@@ -66,11 +75,19 @@ function createimage(path,name,homepage){
        console.log(window.location.replace(this.title));
    })
    var p=document.createElement("h2");
+   var info=document.createElement("p");
+   info.setAttribute("class","informacie");
+   info.innerText=popisfilmu;
+   info.style.display="none";
+   info.style.position="absolute";
+   info.style.backgroundColor="white";
+   info.style.marginTop="20%";
    var p2=document.createElement("h2");
    p2.setAttribute("class","p22");
-   p2.textContent="70%";
+   p2.textContent=hodnotenie;
    innerdiv.appendChild(p2);
    p.textContent=name;
+   outerdiv.appendChild(info);
   outerdiv.appendChild(x);
   outerdiv.appendChild(innerdiv);
   outerdiv.appendChild(p);

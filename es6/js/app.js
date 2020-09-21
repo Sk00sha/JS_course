@@ -47,3 +47,10 @@ class SexierNumbers extends SexyNumbers {
 console.log(
 	SexierNumbers.discount(100)
 );
+var a=(x,b)=>x+b;
+console.log(a(2,3));
+function maxpola(...rest){
+	let a=rest.sort((a,b) =>b-a);
+	console.log(a[0]);
+}
+maxpola(1,2,3,4,5);

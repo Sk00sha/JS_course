@@ -5,7 +5,7 @@
 }
 .imgfield{
     height: 100%;
-    width: 100%;
+    width: 99%;
     margin-left: 1%;
     margin-top: 1%;
 }
@@ -25,7 +25,7 @@ div{
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    width: 22%;  
+    width: 25%;  
     border-radius: 10px;
 }
   #divid{
