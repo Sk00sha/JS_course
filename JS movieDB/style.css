@@ -33,11 +33,20 @@ div{
       margin-right: 10%;
       margin-top: 0;
   }
+  .informacie{
+      margin-top: 0;
+      animation-name: example;
+  animation-duration: infinite;
+  }
+  @keyframes example {
+    0%   { transform:  scale(1,1); }
+    100% { transform:  scale(2,2); }
+  }
   .genre{
       position: absolute;
       border: 2px solid black;
       background: radial-gradient(#e66465, #9198e5);
-      top: 0;
+      bottom: 0;
       right: 0;
 	height : 4vw;
 	width : 4vw;

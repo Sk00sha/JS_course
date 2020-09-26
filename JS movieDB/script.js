@@ -69,7 +69,7 @@ function createimage(path,name,homepage,hodnotenie,popisfilmu){
    x.setAttribute("title",name);
    var button=document.createElement("BUTTON");
    button.setAttribute("class","myButton");
-   button.innerHTML="Visit page";
+   button.innerHTML="Visit page";*
    button.title=homepage;
    button.addEventListener('click',function(){
        console.log(window.location.replace(this.title));
@@ -81,13 +81,13 @@ function createimage(path,name,homepage,hodnotenie,popisfilmu){
    info.style.display="none";
    info.style.position="absolute";
    info.style.backgroundColor="white";
-   info.style.marginTop="20%";
+   info.style.fontSize="1vw";
    var p2=document.createElement("h2");
    p2.setAttribute("class","p22");
    p2.textContent=hodnotenie;
+   outerdiv.appendChild(info);
    innerdiv.appendChild(p2);
    p.textContent=name;
-   outerdiv.appendChild(info);
   outerdiv.appendChild(x);
   outerdiv.appendChild(innerdiv);
   outerdiv.appendChild(p);
