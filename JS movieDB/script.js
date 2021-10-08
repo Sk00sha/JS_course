@@ -1,5 +1,5 @@
 
-const url2="https://api.themoviedb.org/3/genre/movie/list?api_key=5144e83411256d388c3e668c8aa3cc83&language=en-US";
+const url2="https://api.themoviedb.org/3/genre/movie/list?api_key=&language=en-US";
 function buildurl(int){
    const url='https://api.themoviedb.org/3/movie/'+int+'?api_key=';
    return url;
